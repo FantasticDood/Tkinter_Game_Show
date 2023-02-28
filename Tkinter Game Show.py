@@ -212,7 +212,7 @@ def questionhide():
 
 ## Imaging thing    
 
-img = ImageTk.PhotoImage(Image.open('Tower.jpeg'))
+img = ImageTk.PhotoImage(Image.open('Path/To/Image.jpeg'))
 Image1 = tk.Label(window, image = img)
 img2 = ImageTk.PhotoImage(Image.open('White_house.jpeg'))
 Image2 = tk.Label(window, image = img2)
@@ -227,24 +227,27 @@ window.configure(background='#EDEADE')
 
 ## Start Game
 
+## Music Functionality (needs fix on stopping when program exits)
 mixer.init()
 def sound(filename):
     mixer.music.load(filename)
     mixer.music.play()    
 
-sound('Music/3.mp3')
+sound('Path/To/Music.mp3')
 
-questionlabel("Welcome to Daniel's Gameshow!",30,180,50,'black')
+questionlabel("Intro_Text",X-pos,Y-pos,Font-Size,'Color')
 
 otherlabel('Points: ' + str(points),600,20)
 
 def func1():
     questionhide()
-    Image1.pack()
-    questionlabel("What building is this?",150,330,50,'black')
-    options('Paris','China','Burg Khalifa','Eiffel Tower')
+    Your_image_variable.pack()
+    questionlabel("Question",X-pos,Y-pos,Font-Size,'Color')
+    options('Option 1 (e.g Paris)','Option 2','Option 3','Option 4')
     buttons_place()
 
+## Example Question/Function:
+    
 def func2():
     questionhide()
     questionlabel('What is the capital of the US?',80,200,50,'black')
@@ -253,14 +256,10 @@ def func2():
     buttons_place()
 
 def func3():
-    yesbutton.place_forget()
-    nobutton.place_forget()
-    questionhide()
-    questionlabel('DOUBLE OR NOTHING! :O',80,30,30,'black')
-    buttons_place()
+## Function here
 
 def func4():
-    print('extreme gay')
+## Other Function here
 
 def double1():
     global yesbutton
